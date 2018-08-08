@@ -1,0 +1,29 @@
+{
+  "name": "expense-tracker",
+  "version": "1.0.0",
+  "description": "Expense tracker made using React and MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satwikmvv/expense-tracker.git"
+  },
+  "author": "Satwik Mandapati",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/satwikmvv/expense-tracker/issues"
+  },
+  "homepage": "https://github.com/satwikmvv/expense-tracker#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.6.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}
