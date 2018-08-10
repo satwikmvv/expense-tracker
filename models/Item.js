@@ -9,7 +9,7 @@ const ItemSchema = new Schema({
     },
     date: {
         type: Date,
-        default: Date.now
+        required:true
     },
     tags: {
         type: Array,
@@ -21,7 +21,8 @@ const ItemSchema = new Schema({
     },
     account: {
         type: String,
-        default: ""
+        default: "",
+        required:true
     }
 
 });

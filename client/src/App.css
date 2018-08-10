@@ -1,0 +1,41 @@
+.App {
+  padding:0;
+}
+
+.headerTitle {
+  height:100px;
+  padding: 20px;
+  color: #222;
+  background-color: #ff6e40;
+  font-size: 250%;
+}
+
+
+
+.no-padding {
+  padding:0;
+}
+
+.row {
+  margin:0
+}
+
+/* [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+} */
+
+.infoBar {
+  background-color: #424242;
+  color: white;
+  height: 60px;
+  padding: 18px 0;
+}
+
+.contentBox {
+  background: #f1f1f1
+}
+
+.contentBox > div {
+  padding: 25px;
+}
