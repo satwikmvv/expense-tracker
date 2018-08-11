@@ -56,24 +56,33 @@ class InputExpense extends Component {
     render() {
         return (
             <div className="inputForm">
+                <div className="form-group expense-check">
+                    <span>Expense</span><input type="checkbox" id="expenseType"  /><span>Income</span>
+                </div>
                 <div className="form-group">
-                    <label htmlFor="account">Account/Card:</label>
+                    {/* <label htmlFor="account">Account/Card:</label> */}
                     <input type="text" id="account" className="form-control" value={this.state.account} placeholder="Account Name" onChange={this.handleChange.bind(this)} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="amount">Amount:</label>
-                    <input  type="text" id="amount" className="form-control" value={this.state.amount} placeholder="Amount" onChange={this.handleChange.bind(this)} />
+                    {/* <label htmlFor="amount">Amount:</label> */}
+                    <div className="input-group mb-2 mr-sm-2">
+                        <div className="input-group-prepend">
+                            <div className="input-group-text">$</div>
+                        </div>
+                        <input  type="text" id="amount" className="form-control" value={this.state.amount} placeholder="Amount" onChange={this.handleChange.bind(this)} />
+                    </div>
+                    
                 </div>
                 <div className="form-group">
-                    <label htmlFor="category">Category:</label>
+                    {/* <label htmlFor="category">Category:</label> */}
                     <input type="text" id="category" className="form-control" value={this.state.category} placeholder="Category" onChange={this.handleChange.bind(this)} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="date">Date:</label>
+                    {/* <label htmlFor="date">Date:</label> */}
                     <input type="date" id="date" className="form-control" value={this.state.date} placeholder="date" onChange={this.handleChange.bind(this)} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="taginput">Tags:</label>
+                    {/* <label htmlFor="taginput">Tags:</label> */}
                     <input type="text" id="taginput" className="form-control" value={this.state.taginput} placeholder="Tags" 
                         onChange={this.handleChange.bind(this)}
                         onKeyPress={this.handleKeyPress.bind(this)} 
@@ -81,7 +90,7 @@ class InputExpense extends Component {
                 </div>
                 
                 
-                <button onClick={this.handleSubmit.bind(this)}>Submit</button>
+                <button className="btn btn-primary" onClick={this.handleSubmit.bind(this)}>Add Expense</button>
             </div>
         );
     }

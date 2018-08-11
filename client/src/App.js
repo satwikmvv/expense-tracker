@@ -19,7 +19,12 @@ class App extends Component {
           </div>
           <div className="row contentBox">
             <div className="col-4 transInputBox">
-              <InputExpense />
+              <div className="card">
+              <div className="card-body">
+                <h5 className="card-title">Add Expense/Income</h5>
+                <InputExpense />
+              </div>
+              </div>
             </div>
             <div className="col-8 transDisplayBox">
               <DisplayList />
