@@ -6,5 +6,7 @@ App In Progress
 ## Usage
 
 > fork or clone repo
+
 > npm install
+
 > npm run dev
