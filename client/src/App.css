@@ -78,7 +78,6 @@ input[type="checkbox"]:before {
 
 input:checked[type="checkbox"]:before {
   left:20px;
-  background:rgb(255, 255, 255);
 }
 
 /* Checkbox styling */
@@ -87,4 +86,12 @@ input:checked[type="checkbox"]:before {
   top: -3px;
   position: relative;
   margin: 0px 10px;
+}
+
+.income {
+  background-color: #00800030;
+}
+
+.expense {
+  background-color: #ff000033;
 }

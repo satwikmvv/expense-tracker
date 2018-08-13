@@ -11,7 +11,8 @@ class InputExpense extends Component {
             category:'',
             taginput:'',
             date: '',
-            tags:[]
+            tags:[],
+            entryType:'Expense'
         }
     }
     
@@ -26,7 +27,7 @@ class InputExpense extends Component {
             category:'',
             tags:[],
             taginput:'',
-            date:''
+            date:'',
         })
     }
 
@@ -53,11 +54,27 @@ class InputExpense extends Component {
         )
     }
 
+    handleToggle=(e) => {
+        this.setState((prevState)=> {
+            var dumExpenseType = '';
+            (prevState.entryType==='Expense') 
+            ?
+                dumExpenseType = 'Income'
+            :
+                dumExpenseType = 'Expense'   ;
+
+            return {
+                entryType: dumExpenseType
+            }
+
+        })
+    }
+
     render() {
         return (
             <div className="inputForm">
                 <div className="form-group expense-check">
-                    <span>Expense</span><input type="checkbox" id="expenseType"  /><span>Income</span>
+                    <span>Expense</span><input type="checkbox" id="expenseType"  value={this.state.entryType}  onChange={this.handleToggle.bind(this)} /><span>Income</span>
                 </div>
                 <div className="form-group">
                     {/* <label htmlFor="account">Account/Card:</label> */}
@@ -90,7 +107,7 @@ class InputExpense extends Component {
                 </div>
                 
                 
-                <button className="btn btn-primary" onClick={this.handleSubmit.bind(this)}>Add Expense</button>
+                <button className="btn btn-primary" onClick={this.handleSubmit.bind(this)}>Add {this.state.entryType}</button>
             </div>
         );
     }

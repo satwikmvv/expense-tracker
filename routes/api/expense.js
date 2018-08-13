@@ -29,7 +29,8 @@ router.post('/',(req, res) =>{
         account: req.body.account,
         category: req.body.category,
         tags: req.body.tags,
-        date: new Date(req.body.date)
+        date: new Date(req.body.date),
+        ExpenseType: req.body.entryType
     });
 
     newItem.save().then(item=>res.json(item));

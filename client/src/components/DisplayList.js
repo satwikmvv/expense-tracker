@@ -10,33 +10,40 @@ class DisplayList extends Component {
     }
     
     componentDidMount() {
-        axios.get('api/expense')
+        axios
+            .get('api/expense')
             .then(res=>this.setState({
                 item:res.data
             }))
-        // axios.post('/api/expense',{amount:6578676958658, a:'trysqagfvqawgfewdfwsge'}).then(res=>console.log(res)).catch(err=>console.log(err))
     }
 
+
+    handleClick = (id) => {
+        axios
+            .delete(`api/expense/${id}`)
+    }
 
     render() {
         return (
             <div>
-                <table className="table table-striped table-bordered">
+                <table className="table table-hover table-striped table-bordered">
                     <thead className="thead-light">
                         <tr>
                         <th scope="col">Date</th>
                         <th scope="col">Amount</th>
                         <th scope="col">Category</th>
                         <th scope="col">Account</th>
+                        <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         {(this.state.item) && this.state.item.map(x=>(
                             <tr key={x._id}>
-                                <td>{new Date(x.date).toUTCString().substr(5,11)}</td>
-                                <td>${x.amount}</td>
-                                <td>{x.category}</td>
-                                <td>{x.account}</td>
+                                <td className={x.ExpenseType.toLowerCase()}>{new Date(x.date).toUTCString().substr(5,11)}</td>
+                                <td className={x.ExpenseType.toLowerCase()} >${x.amount}</td>
+                                <td className={x.ExpenseType.toLowerCase()}>{x.category}</td>
+                                <td className={x.ExpenseType.toLowerCase()}>{x.account}</td>
+                                <td className={x.ExpenseType.toLowerCase()}><button onClick={this.handleClick.bind(this,x._id)}>&times;</button></td>
                             </tr>
                         ))}
                     </tbody>

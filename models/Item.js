@@ -23,7 +23,13 @@ const ItemSchema = new Schema({
         type: String,
         default: "",
         required:true
+    },
+    ExpenseType: {
+        type: String,
+        default: "",
+        required:true
     }
+    
 
 });
 
