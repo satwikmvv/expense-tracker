@@ -108,7 +108,7 @@ input:checked[type="checkbox"]:before {
 
 tr .deleteButton{
   opacity: 0;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 tr:hover .deleteButton {
