@@ -16,6 +16,14 @@ class DisplayList extends Component {
                 item:res.data
             }))
     }
+    
+    componentDidUpdate() {
+        axios
+            .get('api/expense')
+            .then(res=>this.setState({
+                item:res.data
+            }))
+    }
 
 
     handleClick = (id) => {
@@ -33,7 +41,6 @@ class DisplayList extends Component {
                         <th scope="col">Amount</th>
                         <th scope="col">Category</th>
                         <th scope="col">Account</th>
-                        <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,8 +49,11 @@ class DisplayList extends Component {
                                 <td className={x.ExpenseType.toLowerCase()}>{new Date(x.date).toUTCString().substr(5,11)}</td>
                                 <td className={x.ExpenseType.toLowerCase()} >${x.amount}</td>
                                 <td className={x.ExpenseType.toLowerCase()}>{x.category}</td>
-                                <td className={x.ExpenseType.toLowerCase()}>{x.account}</td>
-                                <td className={x.ExpenseType.toLowerCase()}><button onClick={this.handleClick.bind(this,x._id)}>&times;</button></td>
+                                <td className={x.ExpenseType.toLowerCase()}>
+                                    {x.account}
+                                    <button className="deleteButton" onClick={this.handleClick.bind(this,x._id)}>&times;</button>
+                                </td>
+                                
                             </tr>
                         ))}
                     </tbody>

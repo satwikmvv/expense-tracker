@@ -95,3 +95,22 @@ input:checked[type="checkbox"]:before {
 .expense {
   background-color: #ff000033;
 }
+
+.deleteButton {
+  float: right;
+  -webkit-appearance: none;
+  border:none;
+  border-radius: 50%;
+  background: #ff00007d;
+  width: 22%;
+
+}
+
+tr .deleteButton{
+  opacity: 0;
+  transition: 0.5s;
+}
+
+tr:hover .deleteButton {
+  opacity: 1;
+}
